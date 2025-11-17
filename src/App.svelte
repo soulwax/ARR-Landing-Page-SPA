@@ -358,7 +358,7 @@
     </li>
     <li class="nav-github">
       <a
-        href="https://github.com/soulwax/ARR-Landing-Page"
+        href="https://github.com/soulwax/ARR-Landing-Page-SPA"
         target="_blank"
         rel="noopener"
         aria-label="GitHub Repository"

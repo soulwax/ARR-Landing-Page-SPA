@@ -1,8 +1,22 @@
 {
   "name": "arr-landing-spa",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.2.0",
   "type": "module",
+  "homepage": "https://bluesixtech.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soulwax/ARR-Landing-Page-SPA"
+  },
+  "author": {
+    "name": "Soulwax",
+    "email": "soulwax@bluesixtech.io",
+    "url": "https://bluesixtech.io"
+  },
+  "license": "AGPL-3.0",
+  "keywords": [
+    "arr", "stack", "autonomous", "stack", "landing", "page", "spa"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
