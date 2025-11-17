@@ -11,12 +11,7 @@
 
   const heroTitleLines = [
     { text: 'Build your ARR stack.', rotated: false },
-    { text: 'Stay in control.', rotated: true }
-  ]
-
-  const heroSecondaryLines = [
-    'Control your collection.',
-    'Share it on your terms.'
+    { text: 'Control it your way.', rotated: true }
   ]
 
   const heroSubtitle = 'Keep every download, metadata tag, and dashboard in your own infrastructure.'
@@ -385,11 +380,6 @@
         <span class="title-line {line.rotated ? 'rotated' : ''}">{line.text}</span>
       {/each}
     </h1>
-    <h2>
-      {#each heroSecondaryLines as line}
-        <span class="title-line">{line}</span>
-      {/each}
-    </h2>
     <p class="hero-subtitle">{heroSubtitle}</p>
     <div class="hero-cta">
       <a href="#apps" class="cta-button">Applications</a>
