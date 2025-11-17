@@ -20,6 +20,7 @@
     --text-secondary: rgba(255, 255, 255, 0.7);
     --border-color: rgba(255, 255, 255, 0.1);
     --glow-color: rgba(16, 185, 129, 0.3);
+    --nav-item-height: 42px;
 }
 
 html {
@@ -125,11 +126,21 @@ body:not(.loaded) * {
 
 .nav-menu {
     display: flex;
+    align-items: center;
     list-style: none;
     gap: 2rem;
 }
 
+.nav-menu > li {
+    display: flex;
+    align-items: center;
+    height: var(--nav-item-height);
+}
+
 .nav-menu a {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
@@ -173,7 +184,7 @@ body:not(.loaded) * {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    padding: 0.45rem 1.1rem;
+    padding: 0 1.1rem;
     border-radius: 999px;
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
@@ -183,6 +194,7 @@ body:not(.loaded) * {
     transition: all 0.25s ease;
     position: relative;
     overflow: hidden;
+    height: var(--nav-item-height);
 }
 
 .nav-download-btn::before {
@@ -1550,6 +1562,15 @@ body.details-page .hero-title {
     .nav-download-btn {
         width: 100%;
         justify-content: center;
+        height: auto;
+    }
+
+    .nav-menu > li {
+        height: auto;
+    }
+
+    .nav-menu a {
+        height: auto;
     }
 
     .menu-toggle {
