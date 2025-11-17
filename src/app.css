@@ -165,6 +165,48 @@ body:not(.loaded) * {
     background: var(--primary-color);
 }
 
+.nav-download {
+    margin-left: 0.5rem;
+}
+
+.nav-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.65rem 1.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-download-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: -1;
+}
+
+.nav-download-btn:hover {
+    color: var(--dark-bg);
+    box-shadow: 0 10px 25px var(--glow-color);
+}
+
+.nav-download-btn:hover::before {
+    opacity: 1;
+}
+
+.nav-download-btn span {
+    letter-spacing: 0.02em;
+}
+
 .nav-github {
     margin-left: 1rem;
     padding-left: 1rem;
@@ -1498,6 +1540,15 @@ body.details-page .hero-title {
         border-top: 1px solid var(--border-color);
         padding-top: 1rem;
         margin-top: 1rem;
+    }
+
+    .nav-download {
+        width: 100%;
+    }
+
+    .nav-download-btn {
+        width: 100%;
+        justify-content: center;
     }
 
     .menu-toggle {
