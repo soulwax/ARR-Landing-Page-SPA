@@ -10,9 +10,8 @@
   ]
 
   const heroTitleLines = [
-    { text: 'Tired of losing libraries overnight?', rotated: false },
-    { text: 'Build a resilient self-hosted hub.', rotated: true },
-    { text: 'Automate everything with the *ARR stack.', rotated: false }
+    { text: 'Build your ARR stack.', rotated: false },
+    { text: 'Stay in control.', rotated: true }
   ]
 
   const heroSecondaryLines = [
