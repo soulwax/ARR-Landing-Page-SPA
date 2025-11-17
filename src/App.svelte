@@ -357,6 +357,11 @@
         <a href={link.href}>{link.label}</a>
       </li>
     {/each}
+    <li class="nav-download">
+      <a href="/arr.zip" class="nav-download-btn" download>
+        <span>Download Bundle</span>
+      </a>
+    </li>
     <li class="nav-github">
       <a
         href="https://github.com/soulwax/ARR-Landing-Page"
