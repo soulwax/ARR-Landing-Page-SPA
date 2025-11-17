@@ -24,6 +24,7 @@ export default defineConfig(({ mode }) => {
       host,
       port,
       strictPort: true,
+      allowedHosts: ['bluesixtech.io'],
     },
   }
 })
