@@ -4,7 +4,7 @@ module.exports = {
       name: 'arr-spa-dev',
       cwd: __dirname,
       script: 'npm',
-      args: 'run dev -- --host 0.0.0.0 --port 5173',
+      args: 'run dev',
       env: {
         NODE_ENV: 'development'
       },
@@ -17,7 +17,7 @@ module.exports = {
       name: 'arr-spa-preview',
       cwd: __dirname,
       script: 'npm',
-      args: 'run preview -- --host 0.0.0.0 --port 4173',
+      args: 'run preview',
       env: {
         NODE_ENV: 'production'
       },

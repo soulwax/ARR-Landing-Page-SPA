@@ -1,6 +1,6 @@
 <script>
-  import { onMount } from 'svelte'
-  import { initLandingPageInteractions } from './lib/landingInteractions'
+  import { onMount } from 'svelte';
+  import { initLandingPageInteractions } from './lib/landingInteractions';
 
   const navLinks = [
     { label: 'Applications', href: '#apps' },
