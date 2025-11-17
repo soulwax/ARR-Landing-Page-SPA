@@ -1,3 +1,7 @@
+const path = require('path')
+
+const envFile = path.join(__dirname, '.env')
+
 module.exports = {
   apps: [
     {
@@ -5,6 +9,7 @@ module.exports = {
       cwd: __dirname,
       script: 'npm',
       args: 'run dev',
+      env_file: envFile,
       env: {
         NODE_ENV: 'development'
       },
@@ -18,6 +23,7 @@ module.exports = {
       cwd: __dirname,
       script: 'npm',
       args: 'run preview',
+      env_file: envFile,
       env: {
         NODE_ENV: 'production'
       },
