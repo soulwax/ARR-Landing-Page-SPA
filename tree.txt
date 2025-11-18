@@ -10,13 +10,13 @@ arr-landing-spa-svelte
 ├───package-lock.json
 ├───package.json
 ├───README.md
-├───STYLING.md
 ├───svelte.config.js
 ├───tree.txt
 ├───uno.config.js
 ├───vite.config.js
 ├───public/
 │   ├───arr.zip
+│   ├───rune.svg
 │   └───vite.svg
 └───src/
     ├───app.css
