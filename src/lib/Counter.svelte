@@ -1,3 +1,5 @@
+<!-- File: src/lib/Counter.svelte -->
+
 <script>
   let count = $state(0)
   const increment = () => {

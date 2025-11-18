@@ -1,0 +1,28 @@
+arr-landing-spa-svelte
+├───.env.local
+├───.env.production
+├───.env.sample
+├───.gitignore
+├───ecosystem.config.cjs
+├───index.html
+├───jsconfig.json
+├───LICENSE.md
+├───package-lock.json
+├───package.json
+├───README.md
+├───svelte.config.js
+├───vite.config.js
+├───public/
+│   ├───arr.zip
+│   └───vite.svg
+└───src/
+    ├───app.css
+    ├───App.svelte
+    ├───main.js
+    ├───assets/
+    │   └───svelte.svg
+    └───lib/
+        ├───codeFormatter.js
+        ├───constants.js
+        ├───Counter.svelte
+        └───landingInteractions.js

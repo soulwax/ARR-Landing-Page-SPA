@@ -1,3 +1,5 @@
+// File: src/lib/codeFormatter.js
+
 /**
  * Formats code blocks by highlighting comments in gray
  * @param {string} code - The code string to format
@@ -8,4 +10,3 @@ export function formatCodeWithComments(code) {
   // This handles both inline comments and full-line comments
   return code.replace(/(#.*$)/gm, '<span class="code-comment">$1</span>')
 }
-

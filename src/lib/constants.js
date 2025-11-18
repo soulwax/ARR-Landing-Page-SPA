@@ -1,3 +1,5 @@
+// File: src/lib/constants.js
+
 /**
  * Navigation links configuration
  * @type {Array<{label: string, href: string}>}
@@ -368,4 +370,3 @@ export const resources = [
  * @type {string}
  */
 export const doomUrl = 'https://doom.bluesixtech.io'
-

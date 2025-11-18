@@ -1,3 +1,5 @@
+// File: src/lib/landingInteractions.js
+
 const passiveOptions = { passive: true }
 
 export function initLandingPageInteractions() {
@@ -363,4 +365,3 @@ function debounce(func, wait = 250) {
     timeout = window.setTimeout(() => func(...args), wait)
   }
 }
-

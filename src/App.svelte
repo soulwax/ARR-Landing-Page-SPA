@@ -1,3 +1,5 @@
+<!-- File: src/App.svelte -->
+
 <script>
   import { onMount } from 'svelte';
   import { formatCodeWithComments } from './lib/codeFormatter';
