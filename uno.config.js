@@ -1,10 +1,13 @@
 // File: uno.config.js
 
-import { defineConfig, presetUno, presetAttributify, presetIcons } from 'unocss'
+import presetAttributify from '@unocss/preset-attributify'
+import presetIcons from '@unocss/preset-icons'
+import presetWind from '@unocss/preset-wind'
+import { defineConfig } from 'unocss'
 
 export default defineConfig({
   presets: [
-    presetUno(), // Default preset with Tailwind-compatible utilities
+    presetWind(), // Tailwind-compatible utilities (replaces deprecated presetUno)
     presetAttributify(), // Enable attributify mode (optional)
     presetIcons() // Icon preset (optional, for icon support)
   ],
