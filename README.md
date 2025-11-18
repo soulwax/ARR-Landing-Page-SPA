@@ -2,6 +2,13 @@
 
 Landing page for the *ARR Autonomous Stack. Built with Svelte + Vite.
 
+## Tech Stack
+
+- **Svelte 5** - Component framework
+- **Vite (Rolldown)** - Build tool and dev server
+- **PM2** - Process manager for production
+- **Vanilla CSS** - Custom styling
+
 ## Quick Start
 
 ```bash
