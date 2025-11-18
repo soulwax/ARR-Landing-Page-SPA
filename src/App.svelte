@@ -10,11 +10,11 @@
   ]
 
   const heroTitleLines = [
-    { text: 'Build your ARR stack.', rotated: false },
-    { text: 'Control it your way.', rotated: true }
+    { text: 'ARR Stack', rotated: false },
+    { text: 'Just do it.', rotated: true }
   ]
 
-  const heroSubtitle = 'Keep every download, metadata tag, and dashboard in your own infrastructure.'
+  const heroSubtitle = 'The point is you don\'t need nunflix etc.'
 
   const apps = [
     {
@@ -483,7 +483,6 @@
 <section id="doom" class="doom-section">
   <div class="section-header">
     <h2 class="section-title">Doom</h2>
-    <p class="section-description">Launch the on-demand DOOM experience without overloading the page.</p>
   </div>
   <div class="doom-container">
     <div class="doom-glow"></div>
