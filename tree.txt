@@ -10,7 +10,10 @@ arr-landing-spa-svelte
 ├───package-lock.json
 ├───package.json
 ├───README.md
+├───STYLING.md
 ├───svelte.config.js
+├───tree.txt
+├───uno.config.js
 ├───vite.config.js
 ├───public/
 │   ├───arr.zip
@@ -19,10 +22,10 @@ arr-landing-spa-svelte
     ├───app.css
     ├───App.svelte
     ├───main.js
+    ├───uno.css
     ├───assets/
     │   └───svelte.svg
     └───lib/
         ├───codeFormatter.js
         ├───constants.js
-        ├───Counter.svelte
         └───landingInteractions.js

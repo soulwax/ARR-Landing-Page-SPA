@@ -1,7 +1,8 @@
 // File: vite.config.js
 
-import { defineConfig, loadEnv } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
+import UnoCSS from 'unocss/vite'
+import { defineConfig, loadEnv } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
@@ -16,7 +17,10 @@ export default defineConfig(({ mode }) => {
   const host = env.HOST || '0.0.0.0'
 
   return {
-    plugins: [svelte()],
+    plugins: [
+      UnoCSS(),
+      svelte()
+    ],
     server: {
       host,
       port,

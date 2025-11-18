@@ -6,8 +6,9 @@ Landing page for the *ARR Autonomous Stack. Built with Svelte + Vite.
 
 - **Svelte 5** - Component framework
 - **Vite (Rolldown)** - Build tool and dev server
+- **UnoCSS** - Atomic CSS engine (utility-first)
 - **PM2** - Process manager for production
-- **Vanilla CSS** - Custom styling
+- **Custom CSS** - Legacy styles (works alongside UnoCSS)
 
 ## Quick Start
 

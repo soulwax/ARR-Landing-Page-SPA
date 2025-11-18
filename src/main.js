@@ -1,6 +1,7 @@
 // File: src/main.js
 
 import { mount } from 'svelte'
+import 'uno.css'
 import './app.css'
 import App from './App.svelte'
 
