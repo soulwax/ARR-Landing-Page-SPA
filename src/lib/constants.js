@@ -321,7 +321,7 @@ export const tutorialSteps = [
   },
   {
     number: '09',
-    title: 'You're Done',
+    title: "You're Done",
     paragraphs: ['Your stack is ready. Use it intentionally:'],
     codeBlocks: [],
     lists: [
