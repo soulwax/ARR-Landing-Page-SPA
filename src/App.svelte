@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { formatCodeWithComments } from './lib/codeFormatter';
   import {
       apps,
       detailCards,
@@ -147,7 +148,7 @@
             <p>{@html paragraph}</p>
           {/each}
           {#each step.codeBlocks as block}
-            <pre><code>{block}</code></pre>
+            <pre><code>{@html formatCodeWithComments(block)}</code></pre>
           {/each}
           {#each step.lists as list}
             {#if list.title}

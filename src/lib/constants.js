@@ -178,9 +178,9 @@ export const tutorialSteps = [
     paragraphs: [
       'Access at <strong>https://qbittorrent.bluesixtech.io</strong>',
       'Get the temporary password from logs:',
-      'Update the WebUI settings:'
+      'Update the WebUI settings:<br><span style="color:gray;"># Checklist below</span>'
     ],
-    codeBlocks: ['sudo docker logs qbittorrent'],
+    codeBlocks: ['sudo docker logs qbittorrent # you will not need sudo if you are in the docker group'],
     lists: [
       {
         title: 'WebUI checklist',

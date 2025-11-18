@@ -985,6 +985,11 @@ section {
     font-size: 0.9rem;
 }
 
+.step-content code .code-comment {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
 .step-content strong {
     color: var(--primary-color);
 }
