@@ -1,5 +1,6 @@
 // File: src/lib/landingInteractions.js
 
+/** @type {AddEventListenerOptions} */
 const passiveOptions = { passive: true }
 
 export function initLandingPageInteractions() {
@@ -36,7 +37,7 @@ export function initLandingPageInteractions() {
         return
       }
       const target = document.querySelector(href)
-      if (!target) {
+      if (!target || !(target instanceof HTMLElement)) {
         return
       }
       event.preventDefault()
@@ -53,7 +54,7 @@ export function initLandingPageInteractions() {
       ? new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
-              if (entry.isIntersecting) {
+              if (entry.isIntersecting && entry.target instanceof HTMLElement) {
                 entry.target.style.opacity = '1'
                 entry.target.style.transform = 'translateY(0)'
               }
@@ -66,7 +67,13 @@ export function initLandingPageInteractions() {
   if (animatedObserver) {
     document
       .querySelectorAll('.app-card, .detail-card, .tutorial-step, .flow-step')
-      .forEach((el) => animatedObserver.observe(el))
+      .forEach((el) => {
+        if (el instanceof HTMLElement) {
+          el.style.opacity = '0'
+          el.style.transform = 'translateY(20px)'
+        }
+        animatedObserver.observe(el)
+      })
     cleanup.push(() => animatedObserver.disconnect())
   }
 
@@ -77,7 +84,7 @@ export function initLandingPageInteractions() {
     if (mouseUpdateScheduled) return
     mouseUpdateScheduled = true
     requestAnimationFrame(() => {
-      if (!heroVisual || !floatingShapes) {
+      if (!heroVisual || !floatingShapes || !(heroVisual instanceof HTMLElement)) {
         mouseUpdateScheduled = false
         return
       }
@@ -88,8 +95,10 @@ export function initLandingPageInteractions() {
       }
       const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2
       const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2
-      floatingShapes.style.setProperty('--mouse-x', x.toString())
-      floatingShapes.style.setProperty('--mouse-y', y.toString())
+      if (floatingShapes instanceof HTMLElement) {
+        floatingShapes.style.setProperty('--mouse-x', x.toString())
+        floatingShapes.style.setProperty('--mouse-y', y.toString())
+      }
       mouseUpdateScheduled = false
     })
   }
@@ -103,9 +112,11 @@ export function initLandingPageInteractions() {
     requestAnimationFrame(() => {
       const scrolled = window.pageYOffset
       document.querySelectorAll('.shape').forEach((shape, index) => {
-        const speed = 0.3 + index * 0.1
-        const yPos = -(scrolled * speed)
-        shape.style.setProperty('--scroll-y', `${yPos}px`)
+        if (shape instanceof HTMLElement) {
+          const speed = 0.3 + index * 0.1
+          const yPos = -(scrolled * speed)
+          shape.style.setProperty('--scroll-y', `${yPos}px`)
+        }
       })
       scrollUpdateScheduled = false
     })
@@ -122,10 +133,10 @@ export function initLandingPageInteractions() {
 
   const getParticleCount = () => {
     const width = window.innerWidth || document.documentElement.clientWidth || 0
-    if (width >= 1600) return 5
-    if (width >= 1200) return 4
-    if (width >= 900) return 3
-    return 2
+    if (width >= 1600) return 60
+    if (width >= 1200) return 45
+    if (width >= 900) return 35
+    return 25
   }
 
   const createParticles = () => {
@@ -141,19 +152,71 @@ export function initLandingPageInteractions() {
     const particleCount = getParticleCount()
     const fragment = document.createDocumentFragment()
 
-    for (let i = 0; i < particleCount; i += 1) {
+    const createPatternGroup = (centerX, centerY, radius, count) => {
+      for (let i = 0; i < count; i++) {
+        const angle = (Math.PI * 2 * i) / count
+        const offset = radius * (0.7 + Math.random() * 0.6)
+        const x = centerX + Math.cos(angle) * offset
+        const y = centerY + Math.sin(angle) * offset
+        
+        const particle = document.createElement('div')
+        particle.className = 'particle particle-pattern'
+        
+        const size = (Math.random() * 8 + 12).toFixed(2)
+        const duration = (Math.random() * 8 + 20).toFixed(2)
+        const delay = (Math.random() * 2).toFixed(2)
+        const floatX = (Math.random() * 120 - 60).toFixed(2)
+        const floatY = -(Math.random() * 180 + 80).toFixed(2)
+        const startScale = (Math.random() * 0.4 + 0.6).toFixed(2)
+        const endScale = (Math.random() * 0.5 + 1.0).toFixed(2)
+        const midScale = ((parseFloat(startScale) + parseFloat(endScale)) / 2).toFixed(2)
+        
+        particle.style.width = `${size}px`
+        particle.style.height = `${size}px`
+        particle.style.left = `${x}%`
+        particle.style.top = `${y}%`
+        particle.style.animationDuration = `${duration}s`
+        particle.style.animationDelay = `${delay}s`
+        particle.style.setProperty('--float-x', `${floatX}px`)
+        particle.style.setProperty('--float-y', `${floatY}px`)
+        particle.style.setProperty('--start-scale', startScale)
+        particle.style.setProperty('--mid-scale', midScale)
+        particle.style.setProperty('--end-scale', endScale)
+        
+        fragment.appendChild(particle)
+      }
+    }
+
+    let patternParticlesCreated = 0
+    const patternCount = Math.floor(particleCount * 0.15)
+    for (let p = 0; p < patternCount; p++) {
+      if (Math.random() < 0.2) {
+        const centerX = Math.random() * 80 + 10
+        const centerY = Math.random() * 80 + 10
+        const radius = 5 + Math.random() * 8
+        const groupSize = 4 + Math.floor(Math.random() * 6)
+        createPatternGroup(centerX, centerY, radius, groupSize)
+        patternParticlesCreated += groupSize
+      }
+    }
+
+    // Create random particles
+    const randomParticleCount = Math.max(0, particleCount - patternParticlesCreated)
+    for (let i = 0; i < randomParticleCount; i += 1) {
       const particle = document.createElement('div')
       particle.className = 'particle'
 
-      const size = (Math.random() * 3 + 3).toFixed(2)
+      const size = (Math.random() * 15 + 5).toFixed(2)
       const x = Math.random() * 100
       const y = Math.random() * 100
-      const duration = (Math.random() * 6 + 14).toFixed(2)
-      const delay = (Math.random() * 4).toFixed(2)
-      const floatX = (Math.random() * 80 - 40).toFixed(2)
-      const floatY = -(Math.random() * 140 + 60).toFixed(2)
-      const startScale = (Math.random() * 0.3 + 0.7).toFixed(2)
-      const endScale = (Math.random() * 0.4 + 0.9).toFixed(2)
+      const duration = (Math.random() * 12 + 16).toFixed(2)
+      const delay = (Math.random() * 6).toFixed(2)
+      const floatX = (Math.random() * 150 - 75).toFixed(2)
+      const floatY = -(Math.random() * 200 + 100).toFixed(2)
+      const midX = (Math.random() * 100 - 50).toFixed(2)
+      const midY = (Math.random() * 100 - 50).toFixed(2)
+      const startScale = (Math.random() * 0.5 + 0.5).toFixed(2)
+      const endScale = (Math.random() * 0.6 + 1.0).toFixed(2)
       const midScale = ((parseFloat(startScale) + parseFloat(endScale)) / 2).toFixed(2)
 
       particle.style.width = `${size}px`
@@ -164,6 +227,8 @@ export function initLandingPageInteractions() {
       particle.style.animationDelay = `${delay}s`
       particle.style.setProperty('--float-x', `${floatX}px`)
       particle.style.setProperty('--float-y', `${floatY}px`)
+      particle.style.setProperty('--mid-x', `${midX}px`)
+      particle.style.setProperty('--mid-y', `${midY}px`)
       particle.style.setProperty('--start-scale', startScale)
       particle.style.setProperty('--mid-scale', midScale)
       particle.style.setProperty('--end-scale', endScale)
@@ -204,9 +269,6 @@ export function initLandingPageInteractions() {
     if (typeof motionQuery.addEventListener === 'function') {
       motionQuery.addEventListener('change', handleMotionPreferenceChange)
       cleanup.push(() => motionQuery.removeEventListener('change', handleMotionPreferenceChange))
-    } else if (typeof motionQuery.addListener === 'function') {
-      motionQuery.addListener(handleMotionPreferenceChange)
-      cleanup.push(() => motionQuery.removeListener(handleMotionPreferenceChange))
     }
   }
 
@@ -261,7 +323,9 @@ export function initLandingPageInteractions() {
       }
     }, 8000)
 
-    doomIframe.src = src || ''
+    if (doomIframe instanceof HTMLIFrameElement) {
+      doomIframe.src = src || ''
+    }
   }
 
   if (loadingDiv) {
@@ -324,9 +388,11 @@ export function initLandingPageInteractions() {
       let current = ''
       const scrollPosition = window.pageYOffset
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop
-        if (scrollPosition >= sectionTop - 120) {
-          current = section.getAttribute('id') || ''
+        if (section instanceof HTMLElement) {
+          const sectionTop = section.offsetTop
+          if (scrollPosition >= sectionTop - 120) {
+            current = section.getAttribute('id') || ''
+          }
         }
       })
 

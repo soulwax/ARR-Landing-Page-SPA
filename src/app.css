@@ -448,7 +448,7 @@ body:not(.loaded) * {
 .shape {
     position: absolute;
     border-radius: 50%;
-    filter: blur(30px);
+    filter: blur(50px);
     opacity: 0.6;
     mix-blend-mode: screen;
     will-change: transform;
@@ -588,6 +588,7 @@ body:not(.loaded) * {
     will-change: transform, opacity;
     transform: translateZ(0);
     transition: opacity 0.3s ease-out;
+    filter: blur(20px);
     --float-x: 20px;
     --float-y: -120px;
     --mid-x: calc(var(--float-x) * 0.5);
@@ -595,6 +596,12 @@ body:not(.loaded) * {
     --start-scale: 0.8;
     --mid-scale: 0.9;
     --end-scale: 1;
+}
+
+.particle-pattern {
+    filter: blur(25px);
+    opacity: 0.7;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.9) 0%, rgba(99, 102, 241, 0.5) 50%, rgba(245, 158, 11, 0.3) 70%, rgba(99, 102, 241, 0) 100%);
 }
 
 @keyframes particle-float {
@@ -605,15 +612,17 @@ body:not(.loaded) * {
 
     20% {
         opacity: 0.65;
+        transform: translate3d(calc(var(--mid-x, 0) * 0.3), calc(var(--mid-y, 0) * 0.3), 0) scale(calc(var(--start-scale) * 1.1));
     }
 
     50% {
-        transform: translate3d(var(--mid-x), var(--mid-y), 0) scale(var(--mid-scale));
+        transform: translate3d(var(--mid-x, calc(var(--float-x) * 0.5)), var(--mid-y, calc(var(--float-y) * 0.6)), 0) scale(var(--mid-scale));
         opacity: 0.9;
     }
 
     80% {
         opacity: 0.4;
+        transform: translate3d(calc(var(--float-x) * 0.8), calc(var(--float-y) * 0.8), 0) scale(calc(var(--end-scale) * 0.95));
     }
 
     100% {
