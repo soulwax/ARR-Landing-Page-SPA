@@ -146,6 +146,18 @@ export const detailCards = [
 ]
 
 /**
+ * External links configuration
+ * @type {Array<{id: string, title: string, url: string}>}
+ */
+export const externalLinks = [
+  {
+    id: 'docker-install-guide',
+    title: 'A good install guide for apt based distros',
+    url: 'https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04'
+  }
+]
+
+/**
  * Tutorial steps configuration
  * @type {Array<{number: string, title: string, paragraphs: string[], codeBlocks: string[], lists: Array<{title: string | null, items: string[]}>}>}
  */
@@ -153,7 +165,10 @@ export const tutorialSteps = [
   {
     number: '01',
     title: 'Initial Setup',
-    paragraphs: ['Docker installed? Start the stack:', 'Fix permissions:'],
+    paragraphs: [
+      `Docker installed? <a href="${externalLinks.find(link => link.id === 'docker-install-guide').url}" target="_blank">${externalLinks.find(link => link.id === 'docker-install-guide').title}</a>`,
+      'Fix permissions:'
+    ],
     codeBlocks: ['sudo docker-compose up -d', 'chown -R 1000:1000 /media/Arr'],
     lists: []
   },
