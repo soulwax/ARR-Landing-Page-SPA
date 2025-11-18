@@ -135,7 +135,7 @@
 <section id="tutorial" class="tutorial-section">
   <div class="section-header">
     <h2 class="section-title">Setup Tutorial</h2>
-    <p class="section-description">Configure your stack. Step by step.</p>
+    <p class="section-description">Step by step.</p>
   </div>
   <div class="tutorial-container">
     {#each tutorialSteps as step}
