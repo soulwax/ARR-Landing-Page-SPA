@@ -28,13 +28,13 @@
     "build": "vite build",
     "preview": "vite preview",
     "start": "npm run preview",
-    "pm2:dev": "pm2 start ecosystem.config.cjs --only arr-spa-preview --env development",
-    "pm2:start": "pm2 start ecosystem.config.cjs --only arr-spa-preview --env production",
-    "pm2:preview": "pm2 start ecosystem.config.cjs --only arr-spa-preview --env production",
-    "pm2:restart": "pm2 restart arr-spa-dev arr-spa-preview --update-env",
-    "pm2:stop": "pm2 delete arr-spa-dev arr-spa-preview || true",
+    "pm2:dev": "pm2 start ecosystem.config.cjs --only arr-spa-dev --env development",
+    "pm2:start": "pm2 start ecosystem.config.cjs --only arr-spa-dev --env production",
+    "pm2:preview": "pm2 start ecosystem.config.cjs --only arr-spa-dev --env production",
+    "pm2:restart": "pm2 restart arr-spa-dev arr-spa-dev --update-env",
+    "pm2:stop": "pm2 delete arr-spa-dev arr-spa-dev || true",
     "pm2:logs": "pm2 logs arr-spa-dev",
-    "pm2:logs:preview": "pm2 logs arr-spa-preview"
+    "pm2:logs:preview": "pm2 logs arr-spa-dev"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^6.2.1",

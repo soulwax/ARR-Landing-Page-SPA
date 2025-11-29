@@ -696,10 +696,10 @@ section {
     border-radius: 20px;
     padding: 2.5rem;
     text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     position: relative;
     overflow: hidden;
-    contain: layout style paint;
+    isolation: isolate;
 }
 
 .app-card::before {
@@ -709,20 +709,24 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(135deg,
+        rgba(16, 185, 129, 0.15),
+        rgba(99, 102, 241, 0.15));
     opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .app-card:hover {
     transform: translateY(-10px) scale(1.02);
     border-color: var(--primary-color);
     box-shadow: 0 20px 60px var(--glow-color);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .app-card:hover::before {
-    opacity: 0.1;
+    opacity: 1;
 }
 
 .app-icon {
@@ -730,6 +734,8 @@ section {
     margin-bottom: 1rem;
     filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.3));
     transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .app-card:hover .app-icon {
@@ -741,12 +747,16 @@ section {
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
+    position: relative;
+    z-index: 1;
 }
 
 .app-description {
     color: var(--text-secondary);
     margin-bottom: 1rem;
     font-size: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .app-port {
@@ -755,6 +765,8 @@ section {
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
     opacity: 0.8;
+    position: relative;
+    z-index: 1;
 }
 
 .app-link {
@@ -769,6 +781,7 @@ section {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .app-link::before {
