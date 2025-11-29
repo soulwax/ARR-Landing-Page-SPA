@@ -17,6 +17,7 @@
     --accent-color: #6366f1;
     --dark-bg: #0a0a0f;
     --darker-bg: #050508;
+    --light-bg: #f9f9f9;
     --card-bg: rgba(255, 255, 255, 0.03);
     --text-primary: #ffffff;
     --text-secondary: rgba(255, 255, 255, 0.7);
@@ -431,7 +432,7 @@ body:not(.loaded) * {
 }
 
 .cta-button:hover {
-    color: var(--dark-bg);
+    color: var(--light-bg);
     transform: translateY(-3px);
     box-shadow: 0 10px 30px var(--glow-color);
 }
