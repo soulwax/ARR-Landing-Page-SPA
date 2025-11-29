@@ -18,8 +18,8 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [
-      UnoCSS(),
-      svelte()
+      svelte(),
+      UnoCSS()
     ],
     server: {
       host,

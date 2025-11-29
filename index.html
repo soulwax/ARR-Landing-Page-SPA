@@ -7,6 +7,17 @@
     <link rel="icon" type="image/svg+xml" href="/rune.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>*ARR Autonomous Stack</title>
+    <!-- Ensure base styles load as early as possible to avoid flashes or missing styles -->
+    <link rel="stylesheet" href="/src/app.css">
+    <script>
+      // Add a 'loaded' class once DOM is ready so animations and transitions run
+      // (CSS uses `body:not(.loaded) * { animation-play-state: paused }`)
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => document.body.classList.add('loaded'))
+      } else {
+        document.body.classList.add('loaded')
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>
