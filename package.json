@@ -3,15 +3,15 @@
   "private": true,
   "version": "0.2.0",
   "type": "module",
-  "homepage": "https://bluesixtech.io",
+  "homepage": "https://chudclub.de",
   "repository": {
     "type": "git",
     "url": "https://github.com/soulwax/ARR-Landing-Page-SPA"
   },
   "author": {
     "name": "Soulwax",
-    "email": "soulwax@bluesixtech.io",
-    "url": "https://bluesixtech.io"
+    "email": "soulwax@chudclub.de",
+    "url": "https://chudclub.de"
   },
   "license": "AGPL-3.0",
   "keywords": [

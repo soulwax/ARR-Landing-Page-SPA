@@ -22,13 +22,13 @@ export default defineConfig(({ mode }) => {
       host,
       port,
       strictPort: true,
-      allowedHosts: ["bluesixtech.io", "arr.bluesixtech.io"],
+      allowedHosts: ["chudclub.de", "arr.chudclub.de"],
     },
     preview: {
       host,
       port,
       strictPort: true,
-      allowedHosts: ["bluesixtech.io", "arr.bluesixtech.io"],
+      allowedHosts: ["chudclub.de", "arr.chudclub.de"],
     },
   };
 });
