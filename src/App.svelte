@@ -178,7 +178,6 @@
       <div class="doom-game-container">
         <button type="button" class="doom-start-button" id="doom-start-button">
           Click to launch DOOM
-          <span class="doom-start-subtitle">Loads on demand to save resources</span>
         </button>
         <div class="doom-loading-state" id="doom-loading">
           <p>Loading DOOM...</p>
