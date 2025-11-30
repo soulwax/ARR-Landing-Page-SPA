@@ -37,7 +37,7 @@ export const apps = [
     name: 'Prowlarr',
     description: 'Indexer Manager',
     port: '9696',
-    url: 'https://prowlarr.chudclub.de'
+    url: 'https://prowlarr.madtek.de'
   },
   {
     key: 'sonarr',
@@ -45,7 +45,7 @@ export const apps = [
     name: 'Sonarr',
     description: 'TV Show Manager',
     port: '8989',
-    url: 'https://sonarr.chudclub.de'
+    url: 'https://sonarr.madtek.de'
   },
   {
     key: 'radarr',
@@ -53,7 +53,7 @@ export const apps = [
     name: 'Radarr',
     description: 'Movie Manager',
     port: '7878',
-    url: 'https://radarr.chudclub.de'
+    url: 'https://radarr.madtek.de'
   },
   {
     key: 'lidarr',
@@ -61,7 +61,7 @@ export const apps = [
     name: 'Lidarr',
     description: 'Music Manager',
     port: '8686',
-    url: 'https://lidarr.chudclub.de'
+    url: 'https://lidarr.madtek.de'
   },
   {
     key: 'homarr',
@@ -69,7 +69,7 @@ export const apps = [
     name: 'Homarr',
     description: 'Dashboard',
     port: '7575',
-    url: 'https://homarr.chudclub.de'
+    url: 'https://homarr.madtek.de'
   },
   {
     key: 'jellyfin',
@@ -77,7 +77,7 @@ export const apps = [
     name: 'Jellyfin',
     description: 'Media Server',
     port: '8096',
-    url: 'https://jellyfin.chudclub.de'
+    url: 'https://jellyfin.madtek.de'
   },
   {
     key: 'qbittorrent',
@@ -85,7 +85,7 @@ export const apps = [
     name: 'qBittorrent',
     description: 'Download Client',
     port: '8080',
-    url: 'https://qbittorrent.chudclub.de'
+    url: 'https://qbittorrent.madtek.de'
   }
 ]
 
@@ -178,7 +178,7 @@ export const tutorialSteps = [
     number: '02',
     title: 'Configure qBittorrent',
     paragraphs: [
-      'Access at <strong>https://qbittorrent.chudclub.de</strong>',
+      'Access at <strong>https://qbittorrent.madtek.de</strong>',
       'Get the temporary password from logs:',
       'Update the WebUI settings:<br><span style="color:gray;"># Checklist below</span>'
     ],
@@ -198,7 +198,7 @@ export const tutorialSteps = [
     number: '03',
     title: 'Configure Prowlarr',
     paragraphs: [
-      'Access at <strong>https://prowlarr.chudclub.de</strong>',
+      'Access at <strong>https://prowlarr.madtek.de</strong>',
       'Add qBittorrent as a download client:'
     ],
     codeBlocks: [],
@@ -218,7 +218,7 @@ export const tutorialSteps = [
     number: '04',
     title: 'Configure Sonarr',
     paragraphs: [
-      'Access at <strong>https://sonarr.chudclub.de</strong>',
+      'Access at <strong>https://sonarr.madtek.de</strong>',
       '<strong>Root Folder</strong>:',
       '<strong>Download Client</strong>:',
       '<strong>Connect to Prowlarr</strong>:',
@@ -259,7 +259,7 @@ export const tutorialSteps = [
     number: '05',
     title: 'Configure Radarr',
     paragraphs: [
-      'Access at <strong>https://radarr.chudclub.de</strong>',
+      'Access at <strong>https://radarr.madtek.de</strong>',
       'Mirror the Sonarr setup with movie-specific paths.'
     ],
     codeBlocks: [],
@@ -277,7 +277,7 @@ export const tutorialSteps = [
     number: '06',
     title: 'Configure Lidarr',
     paragraphs: [
-      'Access at <strong>https://lidarr.chudclub.de</strong>',
+      'Access at <strong>https://lidarr.madtek.de</strong>',
       'Same flow as Sonarr/Radarr with music folders.'
     ],
     codeBlocks: [],
@@ -320,7 +320,7 @@ export const tutorialSteps = [
     number: '08',
     title: 'Configure Jellyfin',
     paragraphs: [
-      'Access at <strong>https://jellyfin.chudclub.de</strong>',
+      'Access at <strong>https://jellyfin.madtek.de</strong>',
       'Complete the setup wizard, then add libraries:'
     ],
     codeBlocks: [],
@@ -369,4 +369,4 @@ export const resources = [
  * DOOM game iframe URL
  * @type {string}
  */
-export const doomUrl = 'https://doom.chudclub.de'
+export const doomUrl = 'https://doom.madtek.de'

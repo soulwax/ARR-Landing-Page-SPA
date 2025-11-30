@@ -22,13 +22,13 @@ export default defineConfig(({ mode }) => {
       host,
       port,
       strictPort: true,
-      allowedHosts: ["chudclub.de", "arr.chudclub.de"],
+      allowedHosts: ["chudclub.de", "arr.madtek.de", "madtek.de", "www.madtek.de"],
     },
     preview: {
       host,
       port,
       strictPort: true,
-      allowedHosts: ["chudclub.de", "arr.chudclub.de"],
+      allowedHosts: ["chudclub.de", "arr.madtek.de", "madtek.de", "www.madtek.de"],
     },
   };
 });
